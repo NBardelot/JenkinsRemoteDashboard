@@ -2,13 +2,21 @@ Table of content:
 
 Chapter  | Title
 ------------- | -------------
-1  | Using the public API
-2  | Cross-domain
-3  | Responsiveness
-4  | Filtering jobs
-5  | Internationalization (i18n)
+1  | Installation
+2  | Using the public API
+3  | Cross-domain
+4  | Responsiveness
+5  | Filtering jobs
+6  | Internationalization (i18n)
 
-### 1. Using the public API
+### 2. Installation
+
+The simplest way to install this webapp is to clone the Git repository on your computer, while configuring
+your prefered HTTP server so that it serves the index.html page.
+
+You will also need to integrate the webapp with an existing Jenkins server. You can look at §2 (Using the public API) and §3 (Cross-domain).
+
+### 2. Using the public API
 
 If security is enabled in Jenkins, you have to grant 'anonymous' the right to read views/jobs
 so that you can access the public API (even with a specific user+token having those rights).
@@ -23,14 +31,14 @@ For example:
     "authentication_token": "01234567890123456789012345678901"
 ```
 
-### 2. Cross-domain
+### 3. Cross-domain
 
 You need to configure cross-domain in order to use the public API of Jenkins (which the app needs) on
 another domain than the one where Jenkins is hosted. You can for example use the "Secure Requester
 Whitelist Plugin". If you run this app under 'localhost' on a computer, you'll have to add 'localhost'
 as a trusted domain when connected to the security administration page of Jenkins.
 
-### 3. Responsiveness
+### 4. Responsiveness
 
 While this app is 'horizontally' responsive, you'll still need to setup a number of item to show per page
  in the config.json file. It will depend on the height of the screen on which you want to display the reports.
@@ -38,7 +46,7 @@ While this app is 'horizontally' responsive, you'll still need to setup a number
 Note that this will lead the app to compute how many pages are needed to display all the jobs automatically. You
 won't have to change any value once you're satisfied, even if you add/remove jobs or filters.
 
-### 4. Filtering jobs
+### 5. Filtering jobs
 
 You might want to select the jobs you want to display. This is done by filtering the jobs retrieved from
 the public API, using regex (see the "filters" section of config.json).
@@ -52,7 +60,7 @@ For example:
     }
 ```
 
-### 5. Internationalization (i18n)
+### 6. Internationalization (i18n)
 
 The way dates/durations are handled, using the Moment.js library, makes it easy to setup your dashboard
 with the language of your choice.
