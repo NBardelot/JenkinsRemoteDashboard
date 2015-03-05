@@ -1,0 +1,97 @@
+/* Nota: need to keep the duration of animations in the config.json file too */
+
+.train-station-panel {
+    /* Chrome, Safari, Opera */
+    -webkit-animation-name: perpendicular-to-frontal;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-fill-mode: backwards;
+    /* Firefox */
+    -moz-animation-name: perpendicular-to-frontal;
+    -moz-animation-duration: 1500ms;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-fill-mode: backwards;
+    /* standard */
+    animation-name: perpendicular-to-frontal;
+    animation-duration: 1500ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: backwards;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes perpendicular-to-frontal {
+    from {
+        -webkit-transform: rotateX(90deg);
+    }
+    to {
+        -webkit-transform: rotateX(0deg);
+    }
+}
+
+/* Firefox */
+@-moz-keyframes perpendicular-to-frontal {
+    from {
+        -moz-transform: rotateX(90deg);
+    }
+    to {
+        -moz-transform: rotateX(0deg);
+    }
+}
+
+/* standard */
+@keyframes perpendicular-to-frontal {
+    from {
+        transform: rotateX(90deg);
+    }
+    to {
+        transform: rotateX(0deg);
+    }
+}
+
+.reverse-train-station-panel {
+    /* Chrome, Safari, Opera */
+    -webkit-animation-name: frontal-to-perpendicular;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: backwards;
+    /* Firefox */
+    -moz-animation-name: frontal-to-perpendicular;
+    -moz-animation-duration: 1500ms;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-fill-mode: backwards;
+    /* standard */
+    animation-name: frontal-to-perpendicular;
+    animation-duration: 1500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes frontal-to-perpendicular {
+    from {
+        -webkit-transform: rotateX(0deg);
+    }
+    to {
+        -webkit-transform: rotateX(90deg);
+    }
+}
+
+/* Firefox */
+@-moz-keyframes frontal-to-perpendicular {
+    from {
+        -moz-transform: rotateX(0deg);
+    }
+    to {
+        -moz-transform: rotateX(90deg);
+    }
+}
+
+/* standard */
+@keyframes frontal-to-perpendicular {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(90deg);
+    }
+}

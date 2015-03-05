@@ -1,0 +1,49 @@
+{
+  "jenkins": {
+    "url": "http://jenkins.domain/jenkins/",
+    "json_api": "api/json",
+    "api_options": {
+      "depth": 2,
+      "tree": "jobs[name,url,buildable,healthReport[description,score],lastBuild[timestamp]]"
+    },
+    "authentication_user": "public_api",
+    "authentication_token": "01234567890123456789012345679801"
+  },
+
+  "app": {
+    "interval": 90000,
+    "reports_per_page": 6,
+    "language": "EN"
+  },
+
+  "filters": [
+    {
+      "regex": "^(build|deploy|run)",
+      "modifier": "i",
+      "keep": true
+    },
+    {
+      "regex": "^test",
+      "modifier": "i",
+      "keep": false
+    },
+    {
+      "regex": "^WIP",
+      "modifier": "i",
+      "keep": false
+    }
+  ],
+
+  "icons": {
+    "sunny_min_score": 80,
+    "cloudy_min_score": 60,
+    "very_cloudy_min_score": 40,
+    "rainy_min_score": 20,
+    "storm_min_score": 0
+  },
+
+  "animation": {
+    "use_animation": true,
+    "duration_ms": 2000
+  }
+}
